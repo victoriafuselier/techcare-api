@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.PNG">
+    <link href="styles.css" rel="stylesheet">
+    <title>TechCare</title>
+</head>
+<body>
+    <header>
+        <div id="header-left">
+            <img src="images/TestLogo.svg">
+        </div>
+        <div id="header-middle">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/home_FILL0_wght300_GRAD0_opsz24.svg" class="nav-icon">
+                            <p>Overview</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="active-nav-a">
+                            <img src="images/group_FILL0_wght300_GRAD0_opsz24.svg" class="nav-icon">
+                            <p>Patients</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" class="nav-icon">
+                            <p>Schedule</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" class="nav-icon">
+                            <p>Message</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/credit_card_FILL0_wght300_GRAD0_opsz24.svg" class="nav-icon">
+                            <p>Transactions</p>
+                        </a>
+                    </li>            
+                </ul>
+            </nav>
+        </div>
+        <div id="header-right">
+            <img src="images/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" class="small-avatar">
+            <div id="doctor-info">
+                <p>Dr. Jose Simmons</p>
+                <p>General Practitioner</p>
+            </div>
+            <button>
+                <img src="images/settings_FILL0_wght300_GRAD0_opsz24.svg">
+            </button>
+            <button>
+                <img src="images/more_vert_FILL0_wght300_GRAD0_opsz24.svg">
+            </button>
+        </div>
+    </header>
+    <main>
+        <div id="column-one">
+            <section id="patients">
+                <div id="patients-title-div">
+                    <h2>Patients</h2>
+                    <button>
+                        <img src="images/search_FILL0_wght300_GRAD0_opsz24.svg">
+                    </button>
+                </div>
+                <ul id="patients-list"></ul>
+            </section>
+        </div>
+        <div id="column-two">
+            <section id="diagnosis-history">
+                <h2>Diagnosis History</h2>
+                <div id="diagnosis-inner-container">
+                    <div id="blood-pressure">
+                        <div id="blood-pressure-left">
+                            <div id="blood-pressure-title-div">
+                                <h3>Blood Pressure</h3>
+                                <button id="chart-button">
+                                    <p id="chart-button-p">All available data</p>
+                                    <img src="images/expand_more_FILL0_wght300_GRAD0_opsz24.svg">
+                                </button>
+                            </div>
+                            <div id="dropdown-container" style="display: none"></div>
+                            <div style="width: 417px;"><canvas id="bp-chart"></canvas></div>
+                        </div>
+                        <div id="legend-container">
+                            <div id="systolic-container">
+                                <div id="systolic-legend" class="legend-title">
+                                    <div class="legend-icon"></div>
+                                    <p class="legend-p">Systolic</p>
+                                </div>
+                                <div id="systolic-value" class="bp-value"></div>
+                                <div class="levels-container">
+                                    <img class="bp-level-icon" id="systolic-level-icon" src="">
+                                    <div id="systolic-level" class="bp-level"></div>
+                                </div>
+                            </div>
+                            <div id="bp-divider-line"></div>
+                            <div id="diastolic-container">
+                                <div id="diastolic-legend" class="legend-title">
+                                    <div class="legend-icon"></div>
+                                    <p class="legend-p">Diastolic</p>
+                                </div>
+                                <div id="diastolic-value" class="bp-value"></div>
+                                <div class="levels-container">
+                                    <img class="bp-level-icon" id="diastolic-level-icon" src="">
+                                    <div id="diastolic-level" class="bp-level"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="respiratory-rate">
+                        <img class="vitals-icon" src="images/respiratory rate.svg">
+                        <h3>Respiratory Rate</h3>
+                        <p id="rr-value"></p>
+                        <p id="rr-level"></p>
+                    </div>
+                    <div id="temperature">
+                        <img class="vitals-icon" src="images/temperature.svg">
+                        <h3>Temperature</h3>
+                        <p id="temp-value"></p>
+                        <p id="temp-level"></p>
+                    </div>
+                    <div id="heart-rate">
+                        <img class="vitals-icon" src="images/HeartBPM.svg">
+                        <h3>Heart Rate</h3>
+                        <p id="hr-value"></p>
+                        <img id="hr-level-icon">
+                        <p id="hr-level"></p>
+                    </div>
+                </div>
+            </section>
+            <section id="diagnostic-list">
+                <h2>Diagnostic List</h2>
+                <div id="diagnostic-inner-container">
+                    <div id="diagnoses-title">Problem/Diagnosis</div>
+                    <div id="diagnoses-description">Description</div>
+                    <div id="diagnoses-status">Status</div>
+                </div>
+                <div id="diagnostic-inner-scroll-container"></div>
+                </div>
+            </section>
+        </div>
+        <div id="column-three">
+            <section id="patient-info">
+                <div id="patient-img-div">
+                    <img id="patient-img">
+                    <h2 id="patient-name"></h2>
+                </div>
+                <ul>
+                    <li>
+                        <img src="images/BirthIcon.svg">
+                        <div class="info-text">
+                            <p>Date of Birth</p>
+                            <p id="patient-dob"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <img id="gender-icon">
+                        <div class="info-text">
+                            <p>Gender</p>
+                            <p id="patient-gender"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/PhoneIcon.svg">
+                        <div class="info-text">
+                            <p>Contact Info</p>
+                            <p id="contact"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/PhoneIcon.svg">
+                        <div class="info-text">
+                            <p>Emergency Contacts</p>
+                            <p id="emergency-contact"></p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/InsuranceIcon.svg">
+                        <div class="info-text">
+                            <p>Insurance Provider</p>
+                            <p id="insurance"></p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="info-button-div">
+                    <button id="info-button">Show All Information</button>
+                </div>
+            </section>
+            <section id="lab-results">
+                <h2>Lab Results</h2>
+                <ul id="lab-results-inner-container"></ul>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="js/variables.js"></script>
+    <script type="module" src="js/functions.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/eventlistener.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
