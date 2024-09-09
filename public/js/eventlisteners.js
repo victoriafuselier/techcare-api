@@ -1,5 +1,5 @@
 import { chartButton, dropdownContainer } from './variables.js';
-import { fillPatientsList, addPatientListEventListener, inputPatientData, toggleDropdown, handleClickOutsideDropdown, handleDropdownButtonClick } from '../../functions.js';
+import { fillPatientsList, addPatientListEventListener, inputPatientData, toggleDropdown, handleClickOutsideDropdown, handleDropdownButtonClick } from './functions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('/api/patients')
