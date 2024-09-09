@@ -13,7 +13,15 @@ let fullBPChartData = [];
 export function fillPatientInfo(patient) {
   patientName.innerHTML = patient.name;
   img.setAttribute('src', patient.profile_picture);
-  dob.innerHTML = patient.date_of_birth;
+  
+  if (patient.date_of_birth.includes('-')) {
+    const [year, month, day] = patient.date_of_birth.toString().split('-');
+    const formattedDob = `${month.padStart(2, '0')}/${day.padStart(2, '0')}/${year}`;
+    dob.innerHTML = formattedDob;
+  } else if (patient.date_of_birth.includes('/')) {
+    dob.innerHTML = patient.date_of_birth;
+  }
+  
   gender.innerHTML = patient.gender;
   if (patient.gender === 'Female') {
       genderIcon.setAttribute('src', 'images/FemaleIcon.svg');
