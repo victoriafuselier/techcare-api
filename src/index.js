@@ -25,7 +25,6 @@ const fetchData = async () => {
 
     const data = await response.json();
     allPatientsData = data;
-    console.log(allPatientsData);
     } catch (error) {
         console.warn('Failed to fetch patient data:', error);
     }
